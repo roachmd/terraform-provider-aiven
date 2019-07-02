@@ -22,6 +22,16 @@ func Provider() *schema.Provider {
 			},
 		},
 
+		DataSourcesMap: map[string]*schema.Resource{
+			"aiven_connection_pool": datasourceConnectionPool(),
+			"aiven_database":        datasourceDatabase(),
+			"aiven_project":         datasourceProject(),
+			"aiven_project_vpc":     datasourceProjectVPC(),
+			"aiven_service":         datasourceService(),
+			"aiven_service_user":    datasourceServiceUser(),
+			"aiven_kafka_topic":     datasourceKafkaTopic(),
+		},
+
 		ResourcesMap: map[string]*schema.Resource{
 			"aiven_connection_pool":              resourceConnectionPool(),
 			"aiven_database":                     resourceDatabase(),
